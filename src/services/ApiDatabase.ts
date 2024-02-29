@@ -1,9 +1,5 @@
-// @ts-ignore
-import {getIssues} from "./api";
-
-interface IssueDatabase {
-    getIssues(): Promise<any>;
-}
+import {IssueDatabase} from "./interface";
+import {getGithubIssue} from "./api";
 
 const userName = process.env.REACT_APP_GITHUB_USERNAME || (() => {
     throw new Error('REACT_APP_GITHUB_USERNAME is not defined')
@@ -27,7 +23,7 @@ export class ApiDatabase implements IssueDatabase{
     }
 
     getIssues(): Promise<any> {
-        return getIssues(userName, repositoryName)
+        return getGithubIssue(userName, repositoryName)
     }
 
 }

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from '../css//IssueList.module.css';
-import {ApiDatabase} from "../services/issueDatabase";
-
+import {ApiDatabase} from "../services/ApiDatabase";
 
 type ApiIssueList = {
     id: number;
